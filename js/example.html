@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is title</title>
+    <style>
+        #main {
+            width: 400px;
+            height: 150px;
+            border: 1px solid #000000;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #main div {
+            width: 70px;
+            height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <p style="background-color: red;">A</p>
+        <p style="background-color: blue;">B</p>
+        <p style="background-color: black;">C</p>
+        <p style="background-color: yellowgreen;">D</p>
+    </div>
+    <button onclick="myFunc()">test</button>
+    <script>
+        function myFunc() {
+            document.getElementById("main").style.justifyContent = "space-between";
+        }
+        window.onselectstart = myFunc;
+    </script>
+</body>
+
+</html>

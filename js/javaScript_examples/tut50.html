@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS String Functions</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>This is a heading</h1>
+        <div id="content"></div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt nihil eos quasi veniam aliquam tempora,
+            mollitia nulla! Quasi, dolore. Illo impedit nostrum mollitia exercitationem esse natus at, illum suscipit
+            dignissimos perspiciatis, praesentium ipsa id quod minima, assumenda et ea nesciunt. Ea ratione a nesciunt
+            delectus.
+        </p>
+    </div>
+    <script>
+        var str = "This is a string";
+        console.log(str);
+        var position = str.indexOf('is'); //returns the first occurance of the substring
+        console.log(position);
+
+        position = str.lastIndexOf('is'); //returns the last occurance of the substring
+        console.log(position);
+
+        //substring from a string
+        var subStr = str.slice(0, 5);
+        console.log(subStr);
+        subStr = str.substring(1, 9); //same as slice but slice can take negative values
+        console.log(subStr);
+
+        var substrLen = str.substr(1, 3); //return substr from start to last index given as parameters
+        console.log(substrLen);
+
+        var replaced = str.replace('string', 'aniket'); //name is self-explanatory but it cannot change str string but the 
+        // assigned variable will have the new string value;
+        console.log(replaced);
+
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+
+        //concatination of three stings
+        console.log(str.concat(" " + replaced));
+
+        //remove white spaces 
+        var strWithWhiteSpaces = "   aniket       is      a gooofy  boooger  ";
+        console.log(strWithWhiteSpaces);
+        console.log(strWithWhiteSpaces.trim()); //only trims whitespaces at the start or at the end of the string
+
+        var char3 = str.charAt(2);
+        console.log(char3);
+        console.log(str.charCodeAt(3)); //return the UTF-8 character encoding
+
+        console.log(str[2]); //slicing of a string
+    </script>
+</body>
+
+</html>

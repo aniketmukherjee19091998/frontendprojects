@@ -1,0 +1,53 @@
+<!-- scoping in javascript -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoping and conditional statements in JavaSciprt</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>item-1</li>
+            <li>item-2</li>
+            <li>item-3</li>
+            <li>item-4</li>
+        </ul>
+    </div>
+
+    <script>
+        var string1 = "This is a string";
+        var string1 = "This is a string2";
+        /* Scope:->
+            var : global scope
+            let : block level scope i.e. its scope is limited to only block codes like if-else, switch blocks etc.
+            always use let to declare variables
+        */
+        let a = "u";
+        {
+            let a = "I";
+            console.log(a + " from block using let keyword");
+        }
+        console.log(a);
+        console.log(string1);
+        // const :=> non-mutaable variable? , var, let are mutable
+        const str = "Const string";
+        console.log(str);
+        // str = "I eat shit";
+        // conosle.log(str);
+        let age = 23;
+        if (age > 23) {
+            console.log("You are allowed to drive");
+        } else if (age == 23) {
+            console.log("Take a driving test first! If pass then drive O/W Don't!");
+        } else {
+            console.log("you are not allowed to drive");
+        }
+    </script>
+</body>
+
+</html>

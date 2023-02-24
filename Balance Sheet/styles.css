@@ -1,0 +1,197 @@
+/* Reset the box model */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #0a0a23;
+}
+
+/* 
+    * WE can use CSS to make this elements under this class completely hidden
+    * The CSS we about to write is a common set of properties used to ensure 
+        elements are completely hidden visually. 
+    * The following selector will only choose the span elements under the "sr-only" class!    
+    */
+span[class~="sr-only"] {
+    /* Rather than having to constantly double-check you are not overwriting your earlier properties, you can use 
+    the !important keyword to ensure these properties are always applied, regardless of order or specificity. */
+    border: 0 !important;
+    /* The clip property used to define the visible portion of the element */
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    /* The clip-path property determines the shape of clip */
+    clip-path: inset(50%) !important;
+    -webkit-clip-path: inset(50%) !important;
+    /* Now let's size these elements */
+    width: 1px !important;
+    height: 1px !important;
+    /* To prevent overflowing of the text content use overflow property to hidden */
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    /* Then we need to take this hidden elements out of the docment flow */
+    position: absolute !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+
+h1 {
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+}
+
+h1 .flex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+}
+
+/*
+    * The :first-of-type pseudo-selector is used to target the frst 
+    element that matches the seletor.
+    * In the following example we are selecting the first of span elements
+    * As the sapn elements are reversed, visually, so this will appear to be the second 
+    element on the page.
+*/
+h1 .flex span:first-of-type {
+    font-size: 0.7em;
+}
+
+h1 .flex span:last-of-type {
+    font-size: 1.2em;
+}
+
+section {
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0da;
+}
+
+/* Now, let's style our last element of the table header */
+#years {
+    display: flex;
+    /* This following property will push the #years elements at the end of the flex */
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    color: #fff;
+    background-color: #0a0a23;
+    /* Let's ensure our years element don't get hidden */
+    z-index: 999;
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+}
+
+/* The following example will select all the span elements that have a 
+"class" attribute regardless of its value, within #years element */
+#years span[class] {
+    font-weight: bold;
+    text-align: right;
+    width: 4.5rem;
+}
+
+.table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+
+/* The :not() pseudo-selector is used to target all elements that do not match the selector - in this case, 
+    any of your span elements that do not have the sr-only class. 
+    This ensures that your earlier rules for the span[class~="sr-only"] selector are not overwritten. */
+
+
+table {
+    border-collapse: collapse;
+    /* It will allow cell borders to collapse into a single border,
+    instead of a border around each cell */
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin: 3rem;
+}
+
+table caption {
+    color: #356335;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    left: 0.5rem;
+    top: -2.25rem;
+}
+
+tbody td {
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+}
+
+table>tbody>th {
+    width: calc(100% - 12rem);
+}
+
+/* The [attribute="value"] selector targets any element that has an attribute
+with a specific value */
+
+tr[class="total"] {
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+}
+
+tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+/*
+The key difference between tr[class="total"] and tr.total is that the first will select tr elements where the only class is total. The second will select tr elements where the class includes total. 
+*/
+
+tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+}
+
+/*
+The :nth-of-type() pseudo-selector is used to target specific elements based on their order among siblings of the same type.
+*/
+
+tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+}
+
+tr.total:hover {
+    background-color: yellow;
+}
+
+td[class="current"] {
+    font-style: italic;
+}
+
+tr[class="data"] {
+    background-image: linear-gradient(to bottom, #deffe2 1.845rem, white 1.845rem);
+}
+
+tr.data th {
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+}
+
+tr.data th .description {
+    font-style: italic;
+    font-weight: normal;
+    display: block;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+}
+
+tr.data td {
+    vertical-align: top;
+    text-align: right;
+    padding: 0.3rem 0.25rem 0;
+}
+
+tr.data td:last-of-type {
+    padding-right: 0.5rem;
+}

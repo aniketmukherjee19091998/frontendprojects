@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <div id="container">This is arrow function tutorial</div>
+    <script>
+        let greet = () => {
+            console.log("Lana Rhodes is very good girl ^_^");
+        }
+
+        //If the fucntion does not take any argument then we have to give "()"
+        greet();
+        // let sum = (a, b) => a + b;
+        // console.log(sum(1, 2));
+        let halve = b => b / 2;
+        console.log(halve(9));
+
+        let obj1 = {
+            names: ["Anikka", "Lana", "Jada"],
+            speak() {
+                this.names.forEach((students) => {
+                    console.log(students + " is a very good girl ^_^!");
+                });
+            }
+        }
+        obj1.speak();
+    </script>
+</body>
+
+</html>

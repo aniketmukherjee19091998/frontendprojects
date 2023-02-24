@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Redirect after 60 sec idle.</title>
+</head>
+
+<body>
+    <div>This is a div</div>
+    <button onclick="startIdleTimer()">test</button>
+    <script type="text/javascript">
+        let timer, currSec = 0;
+        function resetTimer() {
+            clearInterval(timer);
+            currSec = 0;
+            timer = setInterval(startIdleTimer, 1000);
+        }
+
+        //Define the events that would reset the timer
+        window.onclick = resetTimer;
+        window.onmousedown = resetTimer;
+        window.onmousemove = resetTimer;
+        window.onmouseup = resetTimer;
+        window.ontouchstart = resetTimer;
+        window.onkeypress = resetTimer;
+
+        function startIdleTimer() {
+            currSec++;
+            if (currSec >= 60) {
+                window.location.replace("https://www.google.com");
+            }
+        }
+    </script>
+</body>
+
+</html>

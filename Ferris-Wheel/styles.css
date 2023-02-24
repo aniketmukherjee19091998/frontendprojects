@@ -1,0 +1,163 @@
+/*
+--The animation-name property is sed to link a @keyframe rule 
+to a CSS selector. The value of this property should match the name 
+of the @keuframes rule.
+--animation-duration determines the duration of the animation, it value
+is either ms or sec.
+--animation-iteration-count property sets how many times your animation
+should repeat. This can be set to a definite number or maybe to infinity.
+--animation-timing-function determines how the animation should progress 
+over time. There are a feew different values for this property, but we want
+the ferris wheel animation to run at the same rate from start to finish.
+*/
+
+.wheel {
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-left: 50px;
+    position: absolute;
+    height: 55vw;
+    width: 55vw;
+    max-width: 500px;
+    max-height: 500px;
+    animation-name: wheel;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.line {
+    background-color: black;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* The transform-origin property is used to set the point around which
+    a CSS transformation is applied. For example, when performing a rotate 
+    , the transform-origin determines which point the element is rotated! */
+    transform-origin: 0% 0%;
+}
+
+.line:nth-of-type(2) {
+    transform: rotate(60deg);
+    /* The transform property determines the shape of the element! */
+}
+
+.line:nth-of-type(3) {
+    transform: rotate(120deg);
+    /* The transform property determines the shape of the element! */
+}
+
+.line:nth-of-type(4) {
+    transform: rotate(180deg);
+    /* The transform property determines the shape of the element! */
+}
+
+.line:nth-of-type(5) {
+    transform: rotate(240deg);
+    /* The transform property determines the shape of the element! */
+}
+
+.line:nth-of-type(6) {
+    transform: rotate(300deg);
+    /* The transform property determines the shape of the element! */
+}
+
+.cabin {
+    background-color: red;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    border: 2px solid;
+    transform-origin: 50% 0%;
+    animation: cabins 10s ease-in-out infinite;
+    /* 
+    -This shorthand property can set the animation-name
+    animation-timing-function animation-iteration-count at the same line!
+
+    -To make the cabin rotating animation more smooth we can use 
+    the ease-in-out timing function. This setting will tell the animation 
+    to start and end at a slower pace, but move more quickly in the middle
+    of the cycle. So we need to replace "linear" to "ease-in-out" */
+}
+
+.cabin:nth-of-type(1) {
+    right: -8.5%;
+    top: 50%;
+}
+
+.cabin:nth-of-type(2) {
+    right: 17%;
+    top: 93.5%;
+}
+
+.cabin:nth-of-type(3) {
+    right: 67%;
+    top: 93.5%;
+}
+
+.cabin:nth-of-type(4) {
+    left: -8.5%;
+    top: 50%;
+}
+
+.cabin:nth-of-type(5) {
+    left: 17%;
+    top: 7%;
+}
+
+.cabin:nth-of-type(6) {
+    right: 17%;
+    top: 7%;
+}
+
+/* IMPORTANT */
+/*
+The @KeyFrame at-rule is used to define the flow of a CSS animation.
+Within in the @KeyFrames rule, you can create selectors for specific 
+points in the animation sequence, such as 0% or 25%, or use from and 
+'to' to define the start and end of the sequence. 
+*/
+@keyframes wheel {
+
+    /* Now we need to define how the animation would start. To do this, 
+    we need to create a 0% rule within the @keyframes wheel selector. */
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* animation for .cabins */
+@keyframes cabins {
+    0% {
+        transform: rotate(0deg);
+        /* background-color: yellow; */
+        /* The transition animation of the color seems jerky 
+        when it switching colors. To fix this we removed pre-defined 
+        background-color property */
+    }
+
+    25% {
+        background-color: yellow;
+    }
+
+    50% {
+        background-color: purple;
+    }
+
+    75% {
+        background-color: yellow;
+    }
+
+    /* With this above 75% rule the animation should seeem
+    more smoother */
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}

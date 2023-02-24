@@ -1,0 +1,272 @@
+/* Variables */
+:root {
+    --main-white: #f0f0f0;
+    --main-red: rgb(167, 61, 61);
+    --main-blue: rgb(99, 99, 156);
+    --main-grey: rgb(63, 58, 58);
+}
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 980px) {
+    html {
+        font-size: 57%;
+    }
+}
+
+@media (max-width: 460px) {
+    html {
+        font-size: 54%;
+    }
+}
+
+/* Base styles */
+body {
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--main-white);
+}
+
+h1,
+h2 {
+    font-family: 'Baloo Bhai 2', cursive;
+    font-weight: 700;
+    text-align: center;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+/* Navigation bar */
+#nav-bar {
+    font-family: 'Baloo Bhai 2', cursive;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--main-red);
+    z-index: 1;
+}
+
+#nav-list {
+    display: flex;
+}
+
+@media (max-width: 460px) {
+    #nav-bar {
+        justify-content: center;
+    }
+
+    #nav-list {
+        margin: 0 1rem;
+    }
+}
+
+#nav-list a {
+    display: block;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+#nav-list a:hover {
+    background: var(--main-blue);
+}
+
+/* Welcome Section */
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-grey);
+}
+
+#welcome-section>p {
+    font-size: 2.5rem;
+    color: var(--main-red);
+}
+
+/* Project-section */
+.project-section {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: var(--main-blue);
+}
+
+.project-section-header {
+    max-width: 620px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 2px solid var(--main-white);
+}
+
+@media (max-width: 460px) {
+    .project-section-header {
+        font-size: 4rem;
+    }
+}
+
+/* Automatic image grid */
+.project-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(321px, 1fr));
+    grid-gap: 4rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+@media (max-width: 490px) {
+    .project-section {
+        padding: 6rem 1rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project {
+    background: var(--main-grey);
+    border-radius: 5px;
+}
+
+.code {
+    color: var(--main-grey);
+    transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+    color: orange;
+}
+
+.project-image {
+    height: calc(100% - 7rem);
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    padding: 2rem 0.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+}
+
+.btn-show-all {
+    font-size: 2.1rem;
+    background: var(--main-grey);
+    border-radius: 2%;
+    transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+    background: var(--main-red);
+}
+
+.btn-show-all:hover>i {
+    transform: translateX(0.2rem);
+}
+
+.btn-show-all>i {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+
+/*contact-section */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    background: var(--main-grey);
+}
+
+.contact-section-header>h2 {
+    font-size: 6rem;
+}
+
+.contact-section-header>p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-top: 4rem;
+}
+
+.contact-details {
+    font-size: 2rem;
+    transition: transform 0.3s ease-in;
+}
+
+.contact-details:hover {
+    transform: translateX(1rem);
+}
+
+@media (max-width: 460px) {
+    .contact-section-header>h2 {
+        font-size: 4rem;
+    }
+}
+
+/* footer */
+footer {
+    font-weight: 300;
+    display: flex;
+    color: white;
+    background: black;
+    justify-content: center;
+    height: 30px;
+    padding-top: 5px;
+}

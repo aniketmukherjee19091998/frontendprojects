@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaSciprt | String and its methods</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>This is a heading</h1>
+        <div id="content"></div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt nihil eos quasi veniam aliquam tempora,
+            mollitia nulla! Quasi, dolore. Illo impedit nostrum mollitia exercitationem esse natus at, illum suscipit
+            dignissimos perspiciatis, praesentium ipsa id quod minima, assumenda et ea nesciunt. Ea ratione a nesciunt
+            delectus.</p>
+
+    </div>
+    <script>
+        var string = 'Aniket is a "good" boy';
+        console.log(string);
+        var name = '"aniket"';
+        console.log(name);
+        console.log(string + " " + name);
+        var temp = `${name} is nice person who called me a CAB`; //we can use both single and double quotes inside the backtick quotes
+        console.log(temp);
+        var len = temp.length;
+        console.log(`The length of temp is : ${len}`);
+
+        console.log("hello world\nAniket Mukherjee");
+
+        var y = new String("Making string from constructor!");
+        document.getElementById('content').innerHTML = "<h3>This is an h3 heading</h3>";
+    </script>
+</body>
+
+</html>

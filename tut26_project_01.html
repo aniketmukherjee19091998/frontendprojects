@@ -1,0 +1,191 @@
+<!-- FreestckImages gives us free images for our websites -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniket Fitness</title>
+
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="Style.css">
+<style>
+    /* CSS reset */
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-image: url('png/sushil-ghimire-eFx1KZhaSvo-unsplash.jpg');
+        background-size: 105%;
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+
+    .left {
+        /* border: 2px solid red; */
+        display: inline-block;
+        position: absolute;
+        left: 60px;
+        top: 20px;
+        font-size: 15px;
+        line-height: 15px;
+    }
+
+    .left img {
+        width: 100px;
+        /* filter: invert(100%); make a black image white and  vice versa*/
+    }
+
+    .left div {
+        text-align: center;
+        color: 5px solid rgb(81, 74, 51);
+    }
+
+    .left:hover {
+        cursor: grab;
+    }
+
+    .mid {
+        border: 2px solid green;
+        display: block;
+        width: 40%;
+        margin: 20px auto;
+        background: url();
+    }
+
+    .right {
+        border: 2px solid yellow;
+        right: 34px;
+        top: 20px;
+        display: inline-block;
+        position: absolute;
+    }
+
+    .btn {
+        margin: 0px 9px;
+        color: black;
+        background-color: lightgrey;
+        padding: 3px 10px;
+        border: 2px solid grey;
+        border-width: 1px;
+        font-size: 15px;
+        cursor: pointer;
+        font-family: 'Baloo Bhai 2', cursive;
+        text-decoration-color: bisque;
+    }
+
+    .btn:hover {
+        background-color: lightblue;
+        text-decoration: underline;
+    }
+
+    .navbar li {
+        display: inline-block;
+
+    }
+
+    .navbar li a {
+        color: black;
+        text-decoration: none;
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    .navbar li a:hover {
+        color: blue;
+        text-decoration: underline;
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    .container {
+        border: 2px solid black;
+        margin: 150px 80px;
+        padding: 80px;
+        width: 33%;
+        display: block;
+        border-radius: 2px;
+        border-color: brown;
+    }
+
+    .form-group input {
+        /* background-color: rgb(30, 234, 167); */
+        text-align: center;
+        display: block;
+        width: 74%;
+        padding: 10px;
+        border: 2px solid black;
+        margin: 11px auto;
+        font-size: 20px;
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+
+    .container button {
+        display: block;
+        width: 74%;
+        margin: 7px auto;
+        padding: 2%;
+        border-radius: 2px;
+        border-color: black;
+        background-color: cornsilk;
+    }
+
+    .container button:hover {
+        background-color: lightseagreen;
+        cursor: pointer;
+    }
+
+    .container h1 {
+        text-align: center;
+        padding: 2%;
+        font-size: 27px;
+    }
+</style>
+
+
+<body>
+    <header class="header">
+        <div class="left">
+            <!-- left box for logo -->
+
+            <img src="png/pexels-li-sun-2475875.jpg" alt="">
+            <div>Aniket Fitness</div>
+        </div>
+        <div class="mid">
+            <!-- mid box for navigation -->
+            <ul class="navbar">
+                <li><a href="#" class="Active">Home</a></li>
+                <li><a href="#" class="Active">About Us</a></li>
+                <li><a href="#" class="Active">Fitness Centre</a></li>
+                <li><a href="#" class="Active">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <!-- right for buttons -->
+            <button class="btn">Call Us</button>
+            <button class="btn">Email</button>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Join the best Gym of Kolkata Now!</h1>
+        <!-- to fill the form we need backend php file which will get the data -->
+        <form action="noaction.php">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your name here">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your name here">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your name here">
+            </div>
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your name here">
+            </div>
+            <button class="btn1">Sumbit Now</button>
+        </form>
+    </div>
+</body>
+
+</html>
